@@ -1,0 +1,31 @@
+
+Jednotlivé svazky Ottova slovníku naučného
+Díl	Rozsah hesel	Rok vydání
+1.	A – Alpy	1888
+2.	Alqueire – Ažušak	1889
+3.	B – Bianchi	1890
+4.	Bianchi-Gioviny – Bžunda	1891
+5.	C – Čechůvky	1892
+6.	Čechy – Danseur	1893
+7.	Dánsko – Dřevec	1893
+8.	Dřevěné stavby – Falšování	1894
+9.	Falšování potravin a pochutin – Genrista	1895
+10.	Gens – Hedwigia	1896
+11.	Hédypathie – Hýždě	1897
+12.	Ch – Sv. Jan	1897
+13.	Jana – Kartas	1898
+14.	Kartel – Kraj	1899
+15.	Krajčij – Ligustrum	1900
+16.	Líh – Media	1900
+17.	Median – Navarrete	1901
+18.	Navary – Oživnutí	1902
+19.	P – Pohoř	1902
+20.	Pohora – Q. v.	1903
+21.	R – Rozkoš	1904
+22.	Rozkošný – Schloppe	1904
+23.	Schlossar – Starowolski	1905
+24.	Staroženské – Šyl	1906
+25.	T – Tzschirner	1906
+26.	U – Vusín	1907
+27.	Vůz – Źyźkowski	1908
+28.	Doplňky	1909

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Pč.: {{items.length}} "{{searchTerm}}"  name: {{data.name}} 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" animated ></ion-searchbar>
+
+  <ion-list inset="true">
+    <!-- ion-item  [href]="'/detail?id=' + item.id" detail="true" *ngFor="let item of items" -->
+    <ion-item  (click)="zobrPage(item.id)" detail="true" 
+                *ngFor="let item of items; let idx = index">
+        {{item.title}}
+        <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list>
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

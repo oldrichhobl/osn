@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title>{{modalPar.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content padding>
+  <ion-list inset="true">
+    <ion-item  (click)="closeModal(item)" detail="true" 
+                *ngFor="let item of items; let idx = index">
+        {{item}}
+        <div class="item-note" slot="end">
+        {{item}}
+      </div>
+    </ion-item>
+  </ion-list>        
+  
+  <ion-item text-center>
+      <ion-button (click)="closeModal('Zrus')">Zrus </ion-button>
+  </ion-item>
+
+  </ion-content>

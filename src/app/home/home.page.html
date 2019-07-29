@@ -1,14 +1,43 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title text-center>
+      Ottův slovník naučný
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <ion-item>
+    <ion-range id="r1" min="0" max="1000" step="10" snaps="true" 
+               pin="true"  color="secondary" [(ngModel)]="rangeValue"></ion-range>
+  </ion-item>    
+  <!-- ion-button expand="full" (click)="openAssetPdfOpener('1010.pdf')">OPENER pdf</ion-button>
+  <ion-button expand="full" (click)="openAssetPdf('1010.pdf')">Direct 1010.PDF</ion-button>
+  <ion-button expand="full" (click)="openLocalPdf()">Open 1010.PDF</ion-button>
+  <ion-button expand="full" (click)="downloadAndOpenPdf()">Download and open PDF</ion-button>
+  <ion-button expand="full" (click)="downloadAndOpenPdfInterni()">Download Interni</ion-button>
+
+  <ion-button expand="full" (click)="storeFile('0102.PDF')">Store file 0102.PDF</ion-button -->
+
+ <hr/>
+ <ion-button expand="block"  (click)="openDetailsWithState('knihy')" >
+   Celý seznam knih
+ </ion-button>
+
+   Díly 1-28
+   <!-- ion-button expand="block"  (click)="openModal(dily[3])" >ModalPage</ion-button -->
+   <!--  p *ngIf="dataReturned">{{dataReturned}}</p -->
+  <ion-list>
+       <ion-button (click)="openModal(item)"  *ngFor="let item of globals.dily" >{{item.title}}</ion-button>
+  </ion-list>
+
+ 
+ <ion-button expand="block"  (click)="openDetailsWithState('abeceda')" >
+   Abecední seznam
+ </ion-button>
+
+ <hr/>
+
+ <ion-button  (click)="showAlert()">Status</ion-button>
+
 </ion-content>

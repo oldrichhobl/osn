@@ -1,5 +1,7 @@
 {
   "name": "osn",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
