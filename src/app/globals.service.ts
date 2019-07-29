@@ -27,8 +27,8 @@ import * as JSONdata from "../assets/listdir.json" //You can name 'JSONdata' as 
 })
 export class GlobalService {
 
-  public version = '11.05B.2019';
-  public server: string = "SERVER PUVODNI";
+  public version = '29.07A.2019';
+  public server: string = "www.dramatik.cz";     //  "SERVER-PUVODNI";
   public name: string;
   public password: string;
   public rangeValue : number = 500;
@@ -140,10 +140,10 @@ export class GlobalService {
     this.items = JSONdata.FILES.FILE;
 
   }
-  toustError() {
+  toustError(error) {
     this.toastController.create({
-      message: 'Požadovaný soubor není na serveru www.dramatik.cz.',
-      duration: 6000,
+      message: 'Požadovaný soubor není na serveru www.dramatik.cz: ' + error.source +' => '+error.target,
+      duration: 15000,
       animated: true,
       showCloseButton: true,
       closeButtonText: "OK",
@@ -185,7 +185,7 @@ export class GlobalService {
 storeFile(pdfFile){
 
   let exdir =   this.file.externalDataDirectory;
-  let downloadUrl = 'https://www.dramatik.cz/osn/' + pdfFile;
+  let downloadUrl = 'https://' + this.server + '/osn/' + pdfFile;
 // check fileexist
   this.file.checkFile(exdir, pdfFile)
   .then(_ => {
@@ -195,7 +195,7 @@ storeFile(pdfFile){
         .catch(e => console.log('LOCAL Error opening file', e));
     })
   .catch(err =>{
-    console.log('FILE doesnot exist');
+    console.log('FILE doesnot exist in local memory.');
     this.spinnerDialog.show("Minutku", "nahrávám data " + pdfFile, this.spinnerCanceled());
     const transfer = this.ft.create();
     // transfer.onProgress(this.listenerProgress);
@@ -214,9 +214,9 @@ storeFile(pdfFile){
                   }
           );
      }, (error) => {
-       console.log('Error download file from dramatik.cz ', error);
+       console.log('Error download file from '+this.server, error);
                    this.spinnerDialog.hide();
-                   this.toustError();
+                   this.toustError(error);
      }
      );
     });  

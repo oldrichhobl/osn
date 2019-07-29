@@ -136,9 +136,9 @@ dily = [
           private ft: FileTransfer, 
           private fileOpener: FileOpener, private document: DocumentViewer,
           private router: Router,
-          public modalController: ModalController,
-          public globals: GlobalService,
-          public alertCtrl: AlertController
+          public  modalController: ModalController,
+          public  globals: GlobalService,
+          public  alertCtrl: AlertController
           ) {
 
   }
@@ -152,7 +152,8 @@ dily = [
       if (dataReturned !== null) {
         this.dataReturned = dataReturned.data;
         // alert('Modal Sent Data :'+ dataReturned);
-        this.zobrPage(this.dataReturned);
+        if(this.dataReturned !== 'Zrus')  // misto vybraneho dilu tlcitko Zrus
+           this.zobrPage(this.dataReturned);
       }
     });
  
@@ -307,7 +308,9 @@ listenerProgress(event)
   this.alertCtrl.create({
     header: "Stav",
     subHeader: "Načíst znovu ?",
-    message:"globals.items: "+ this.globals.items.length,
+    message:"globals.items: "+ this.globals.items.length+
+            " server: "+this.globals.server
+    ,
     buttons: [
         {
     	 text:'Ano',
